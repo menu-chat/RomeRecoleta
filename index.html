@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rome Recoleta - AI Assistant</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fdfaf0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            max-width: 400px;
+        }
+        h1 {
+            color: #b22222; 
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .btn-start {
+            background-color: #b22222;
+            color: white;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(178, 34, 34, 0.3);
+            transition: transform 0.2s;
+        }
+        .btn-start:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ROME RECOLETA</h1>
+        <p>¡Hola! Tocá el botón para empezar a chatear con nuestro recomendador.</p>
+        
+        <a id="chatLink" href="#" class="btn-start">
+            ¡HOLA, ROME! 🏛️
+        </a>
+    </div>
+
+    <script>
+        const invisibleSpace = "%E2%A0%80"; 
+        const lineBreak = "%0A";
+        const padding = (invisibleSpace + lineBreak).repeat(25); 
+
+        // Mensaje de bienvenida inicial en argentino
+        const welcomeMessage = "¡Hola!%20Bienvenido%20a%20Rome%20Recoleta%20%F0%9F%8F%9B%EF%B8%8F%0ASoy%20tu%20anfitri%C3%B3n.%20Presion%C3%A1%20%E2%AC%86%EF%B8%8F%20para%20empezar...";
+        
+        // Instrucciones internas reforzadas (Loop + Flujo de preguntas + Tono Argentino)
+        const internalInstructions = "System%20Order%3A%20Act%20as%20the%20official%20Rome%20Recoleta%20assistant.%20LANGUAGE%3A%20Argentine%20Spanish%20(voseo).%20MENU%20LINK%3A%20https%3A%2F%2Fmenu-chat.github.io%2FRomeRecoleta%2FMenuRomaRecoleta.html.%20RULES%3A%201.%20LOOP%3A%20Before%20EVERY%20response%2C%20check%20the%20menu%20link.%202.%20STRICT%20MENU%3A%20Recommend%20ONLY%20from%20the%20menu.%20DO%20NOT%20invent%20dishes%2C%20prices%2C%20or%20ingredients.%203.%20FLOW%3A%20Ask%20one%20question%20at%20a%20time.%20DO%20NOT%20RECOMMEND%20until%20you%20have%20ALL%20answers.%204.%20STEPS%3A%20First%2C%20ask%20mood%20(light%2C%20hearty%2C%20share).%20Second%2C%20ask%20for%20dietary%20restrictions.%20Third%2C%20ask%20what%20they%20want%20to%20drink.%205.%20FINAL%20STEP%3A%20Once%20you%20have%20all%20info%2C%20recommend%20based%20on%20the%20menu%2C%20current%20time%2C%20and%20weather.%206.%20OFF-TOPIC%3A%20If%20the%20user%20deviates%2C%20bring%20them%20back%20to%20the%20restaurant%20topic.%207.%20Style%3A%20Spontaneous%2C%20friendly%2C%20Argentine.";
+
+        const finalUrl = "https://chatgpt.com/?prompt=" + welcomeMessage + padding + internalInstructions + padding + welcomeMessage;
+
+        document.getElementById('chatLink').href = finalUrl;
+    </script>
+</body>
+</html>
