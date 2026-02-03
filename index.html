@@ -4,85 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rome Recoleta - AI Assistant</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WC14RSQ4E7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WC14RSQ4E7');
-</script>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MSRJ4K9S');</script>
-<!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WC14RSQ4E7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WC14RSQ4E7');
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MSRJ4K9S');</script>
     <style>
+        :root {
+            --text: #000000;
+            --bg: #fdfaf0; 
+            --accent: #00ff88;
+        }
+
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #fdfaf0; 
+            background-color: var(--bg);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             text-align: center;
-            color: #333;
+            color: var(--text);
         }
+
         .container {
             padding: 20px;
             max-width: 400px;
         }
+
         h1 {
-            color: #b22222; 
+            color: var(--text);
             font-size: 2.5rem;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: 900;
         }
+
         p {
             font-size: 1.1rem;
             margin-bottom: 30px;
-            color: #555;
+            color: #333;
         }
+
         .btn-start {
-            background-color: #b22222;
-            color: white;
+            background-color: var(--accent);
+            color: var(--text);
             padding: 18px 45px;
             font-size: 1.2rem;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 15px;
             display: inline-block;
-            box-shadow: 0 10px 20px rgba(178, 34, 34, 0.3);
-            transition: transform 0.2s;
+            /* Estilo Neo-Brutalista */
+            border: 3px solid var(--text);
+            box-shadow: 6px 6px 0px var(--text);
+            transition: all 0.2s;
         }
+
+        .btn-start:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 9px 9px 0px var(--text);
+        }
+
         .btn-start:active {
-            transform: scale(0.95);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--text);
+        }
+
+        .footer-text {
+            font-size: 0.8rem; 
+            margin-top: 30px; 
+            color: #888; 
+            font-style: normal;
+        }
+
+        /* MenuChat: Letra verde sobre fondo negro */
+        .footer-link {
+            background-color: #000000;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSRJ4K9S"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <div class="container">
+<div class="container">
         <h1>ROME RECOLETA</h1>
         <p>¡Hola! Tocá el botón para empezar a chatear con nuestro recomendador.</p>
         
         <a id="chatLink" href="#" class="btn-start">
             ¡HOLA, ROME! 🏛️
         </a>
-        <p style="font-size: 0.8rem; margin-top: 30px; color: #888; font-style: normal;">
-    Optimized for ChatGPT App<br>
-    Developed by <a href="https://menu-chat.github.io/menuchat/" style="color: #b22222; text-decoration: none; font-weight: bold;">MenuChat</a>
-</p>
+
+        <p class="footer-text">
+            Optimized for ChatGPT App<br>
+            Developed by <a href="https://menu-chat.github.io/menuchat/" class="footer-link">MenuChat</a>
+        </p>
     </div>
 
     <script>
@@ -93,7 +127,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Mensaje de bienvenida inicial en argentino
         const welcomeMessage = "¡Hola!%20Bienvenido%20a%20Rome%20Recoleta%20%F0%9F%8F%9B%EF%B8%8F%0ASoy%20tu%20anfitri%C3%B3n.%20Presion%C3%A1%20%E2%AC%86%EF%B8%8F%20para%20empezar...";
         
-        // Instrucciones internas reforzadas (Loop + Flujo de preguntas + Tono Argentino)
+        // Instrucciones internas reforzadas
         const internalInstructions = "System%20Order%3A%20Act%20as%20the%20official%20Rome%20Recoleta%20assistant.%20LANGUAGE%3A%20Argentine%20Spanish%20(voseo).%20MENU%20LINK%3A%20https%3A%2F%2Fmenu-chat.github.io%2FRomeRecoleta%2FMenuRomaRecoleta.html.%20RULES%3A%201.%20LOOP%3A%20Before%20EVERY%20response%2C%20check%20the%20menu%20link.%202.%20STRICT%20MENU%3A%20Recommend%20ONLY%20from%20the%20menu.%20DO%20NOT%20invent%20dishes%2C%20prices%2C%20or%20ingredients.%203.%20FLOW%3A%20Ask%20one%20question%20at%20a%20time.%20DO%20NOT%20RECOMMEND%20until%20you%20have%20ALL%20answers.%204.%20STEPS%3A%20First%2C%20ask%20mood%20(light%2C%20hearty%2C%20share).%20Second%2C%20ask%20for%20dietary%20restrictions.%20Third%2C%20ask%20what%20they%20want%20to%20drink.%205.%20FINAL%20STEP%3A%20Once%20you%20have%20all%20info%2C%20recommend%20based%20on%20the%20menu%2C%20current%20time%2C%20and%20weather.%206.%20OFF-TOPIC%3A%20If%20the%20user%20deviates%2C%20bring%20them%20back%20to%20the%20restaurant%20topic.%207.%20Style%3A%20Spontaneous%2C%20friendly%2C%20Argentine.";
 
         const finalUrl = "https://chatgpt.com/?prompt=" + welcomeMessage + padding + internalInstructions + padding + welcomeMessage;
