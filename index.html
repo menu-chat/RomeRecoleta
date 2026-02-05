@@ -109,13 +109,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1>ROME RECOLETA</h1>
         <p>¡Hola! Tocá el botón para empezar a chatear con nuestro recomendador.</p>
         
-        <a id="chatLink" href="#" class="btn-start">
+        <a id="chatLink" href="#" class="btn-start"
+            onclick="gtag('event', 'Clic Chat GPT', {'event_category': 'Interaccion', 'event_label': 'Boton Chat GPT'});">
             ¡HOLA, ROME! 🏛️
         </a>
 
         <p class="footer-text">
             Optimized for ChatGPT App<br>
-            Developed by <a href="https://menu-chat.github.io/menuchat/" class="footer-link">MenuChat</a>
+            Developed by <a href="https://menu-chat.github.io/menuchat/" class="footer-link"
+            onclick="gtag('event', 'Clic_Footer_MenuChat', {'event_category': 'Interaccion', 'event_label': 'Link MenuChat'});">
+            MenuChat</a>
         </p>
     </div>
 
